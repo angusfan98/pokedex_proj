@@ -5,10 +5,10 @@ import PokemonDisplay from './PokemonDisplay'
 
 
 function Pokedex() {
-    const[allPokemons, setAllPokemons] = useState([])
+    const[pokemon_list, setAllPokemons] = useState([])
     const [loadMore, setLoadMore] = useState('https://pokeapi.co/api/v2/pokemon?limit=12')
 
-    const getAllPokemons = async () => {
+    const get_pokemon = async () => {
     const res = await fetch(loadMore)
     const data = await res.json()
 
@@ -22,11 +22,11 @@ function Pokedex() {
       })
     }
     createPokemonObject(data.results)
-    console.log(allPokemons)
+    console.log(pokemon_list)
   }
 
  useEffect(() => {
-  getAllPokemons()
+  get_pokemon()
  }, [])
 
   const {isAuthenticated} = useAuth0();
@@ -36,7 +36,7 @@ function Pokedex() {
         <div className="app-container">
         <div className="pokemon-container">
           <div className="all-container">
-            {allPokemons.map( (pokemonStats, index) => 
+            {pokemon_list.map( (pokemonStats, index) => 
               <PokemonDisplay
                 key={index}
                 id={pokemonStats.id}
@@ -46,7 +46,7 @@ function Pokedex() {
               />)}
             
           </div>
-            <button className="load-more" onClick={() => getAllPokemons()}>Load more</button>
+            <button onClick={() => get_pokemon()}>↓</button>
         </div>
       </div>
     )

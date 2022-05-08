@@ -21,7 +21,7 @@ body {
     background-color: rgb(255, 255, 161);
   }
   .bug {
-    background-color: #F6D6A7;
+    background-color: #A5CE71;
   }
   .poison {
     background-color: #e0a7f6;
@@ -33,13 +33,13 @@ body {
     background-color: rgba(255, 192, 203, 0.863);
   }
   .fire {
-    background-color: #FBE3DF;
+    background-color: #FFA487;
   }
   .grass {
-    background-color:#E2F9E1;
+    background-color:#B8FDA8;
   }
   .water {
-    background-color:#E0F1FD;
+    background-color:#BFD1FF;
   }
   
   .app-container {
@@ -70,7 +70,7 @@ body {
     margin: 0.3rem;
     border: 1px solid #efefef;
     border-radius: 0.2rem;
-    min-width: 160px;
+    min-width: 500px;
     text-align: center;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.089);
   }
