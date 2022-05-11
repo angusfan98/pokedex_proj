@@ -27,7 +27,7 @@ body {
     background-color: #e0a7f6;
   }
   .normal {
-    background-color: #F4F4F4;
+    background-color: #b4b4b4;
   }
   .fairy {
     background-color: rgba(255, 192, 203, 0.863);
@@ -42,6 +42,26 @@ body {
     background-color:#BFD1FF;
   }
   
+  .psychic{
+    background-color:#870d75;
+  }
+
+  .fighting{
+    background-color:#642a01;
+  }
+  
+  .ice{
+    background-color:#90c4ea;
+  }
+
+  .dragon{
+    background-color:#3c0242;
+  }
+
+  .ground{
+    background-color: #ad6531;
+  }
+
   .app-container {
     display: flex;
     flex-direction: column;

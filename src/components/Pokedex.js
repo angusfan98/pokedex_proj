@@ -6,7 +6,7 @@ import PokemonDisplay from './PokemonDisplay'
 
 function Pokedex() {
     const[pokemon_list, setAllPokemons] = useState([])
-    const [loadMore, setLoadMore] = useState('https://pokeapi.co/api/v2/pokemon?limit=12')
+    const [loadMore, setLoadMore] = useState('https://pokeapi.co/api/v2/pokemon?limit=20')
 
     const get_pokemon = async () => {
     const res = await fetch(loadMore)
@@ -22,17 +22,25 @@ function Pokedex() {
       })
     }
     createPokemonObject(data.results)
-    console.log(pokemon_list)
+
   }
+ 
+  function sort_pokemon(poke_arr){
+    poke_arr.sort((a,b)=>(a.name > b.name)?1:-1)
+  }
+
 
  useEffect(() => {
   get_pokemon()
  }, [])
 
-  const {isAuthenticated} = useAuth0();
+
+const {isAuthenticated} = useAuth0();
 
   return (
     isAuthenticated && (
+        <>
+        <button onClick={()=>sort_pokemon(pokemon_list)}>sort</button>
         <div className="app-container">
         <div className="pokemon-container">
           <div className="all-container">
@@ -49,6 +57,7 @@ function Pokedex() {
             <button onClick={() => get_pokemon()}>↓</button>
         </div>
       </div>
+      </>
     )
     );
 }
