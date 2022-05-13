@@ -12,11 +12,13 @@ function App() {
   if (isLoading) return <div> Loading ... </div>
   return (
     <>
+    <div className="app-container">
     <LoginButton />
     <LogoutButton />
     <Profile/>
     <SearchPokemon/>
     <Pokedex/>
+    </div>
     </>
   );
 }
