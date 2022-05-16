@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import Axios from "axios";
 import './display.css'
+import Axios from "axios";
 
 export var featuredPokemon = [];
 

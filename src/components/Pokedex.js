@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
-import { useState } from 'react'
 import PokemonDisplay from './PokemonDisplay'
 import PokemonCard from './PokemonCard'
 import { featuredPokemon } from './PokemonDisplay'
@@ -48,11 +47,9 @@ function Pokedex() {
     poke_arr.sort((a, b) => (a.name > b.name) ? 1 : -1)
   }
 
-
-  useEffect(() => {
-    get_pokemon()
+useEffect(() => {
+  get_pokemon()
   }, [])
-
 
   const { isAuthenticated } = useAuth0();
   return (
